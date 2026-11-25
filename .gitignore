@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.DS_Store
+.idea/
+data/
+results/
+
+# local-only material, not published
+report/
+site/
+src/explore.py
+src/explorer.html
+src/export_site.py
+config/futures_preregistration.md

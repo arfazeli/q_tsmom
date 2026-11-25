@@ -1,0 +1,34 @@
+[project]
+name = "tsmom"
+version = "0.1.0"
+description = "Cross-asset time-series momentum on ETFs: replication and stress test"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas",
+    "numpy",
+    "scipy",
+    "statsmodels",
+    "matplotlib",
+    "pyyaml",
+    "yfinance",
+    "pandas-datareader",
+]
+
+[dependency-groups]
+dev = ["pytest", "ruff"]
+
+[tool.uv]
+package = false  # plain scripts, not an installable package
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["db", "config", "universe", "ingest", "clean", "returns", "volatility", "signals", "backtest", "stats", "overfitting", "regimes", "plots", "vol_conditioning", "regime_analysis", "benchmarks", "futures", "futures_backtest"]

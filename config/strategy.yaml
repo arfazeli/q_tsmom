@@ -1,0 +1,14 @@
+# Baseline strategy.
+lookback_months: 12
+holding_months: 1
+vol_com_days: 60          # EWMA centre of mass; delta/(1-delta) = 60
+vol_target: 0.10          # annualized, per asset (10%; the paper uses 40% on futures, which would make the 2x cap bind on ETFs)
+annualization_days: 261   # trading days per year used to annualize daily vol
+leverage_cap: 2.0         # max |position| per asset
+cost_bp: 5                # cost per unit of turnover, basis points
+min_history_months: 12    # plus vol warm-up before an asset enters the portfolio
+sample_rule: "first month with >= 10 ETFs across >= 4 asset classes"
+sample_start: "2003-07"        # result of sample_rule (in-sample is 2003-07 .. 2015-12)
+in_sample_end: "2015-12-31"
+out_sample_start: "2016-01-01"
+sample_end: "2026-09"          # last month with the French risk-free rate
